@@ -17,6 +17,11 @@ public class BmiFacade {
         this.bmiMapper = new BmiMapper(database);
     }
 
+    public List<BmiEntry> getBmiDataEntriesByUserId(int userId) throws UserException
+    {
+        return bmiMapper.getBmiDataEntriesByUserId(userId);
+    }
+
     public List<BmiEntry> getAllBmiDataEntries() throws UserException
     {
        return bmiMapper.getAllBmiDataEntries();

@@ -1,9 +1,11 @@
 package business.services;
 
+import business.entities.BmiEntry;
 import business.exceptions.UserException;
 import business.persistence.BmiMapper;
 import business.persistence.Database;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 public class BmiFacade {
@@ -13,6 +15,11 @@ public class BmiFacade {
     public BmiFacade(Database database)
     {
         this.bmiMapper = new BmiMapper(database);
+    }
+
+    public List<BmiEntry> getAllBmiDataEntries() throws UserException
+    {
+       return bmiMapper.getAllBmiDataEntries();
     }
 
     public void insertBmiEntry (double bmi,
